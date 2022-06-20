@@ -1,0 +1,41 @@
+Procedure: 
+1. Setting up Blynk App 
+Click on new project and click on home screen 
+From Widget Box select Switch  
+Now click on switch to change settings 
+Select the pin u need to connect with the switch  
+Click on execute button on right top 
+App is ready to operate. The error symbol will be cleared when we upload code using node mcu and relay module after getting connected. 
+ 
+ 
+2. Connecting Interfacing Relay and Node MCU 
+Relay has 3 pin voltage (VCC) , Ground (GND) , Input Pin (IN) 
+Connect VCC relay module to 3x3 of Node MCU 
+Connect GND of relay module to GND of Node 
+MCU 
+Connect IN of relay module to digital pin of Node MCU 
+3. Write code in Arduino IDE and upload the code 
+4. Launch Application 
+Connect 2 pin plug and holder on either sides of the electrical wire 
+Disconnect one of the electrical wire in the circuit in-between 
+These two ends of the voltage end of relay 
+Connect one in the middle and other on either left/right 
+
+Code:
+#define BLYNK_PRINT Serial 
+#include <ESP8266WiFi.h> #include<BlynkSimpleEsp8266.h> 
+char auth[] = "zUbQNauhe5934OxsVFFPmbMQK5N-5JM9"; 
+// ID to connect blynk app 
+char ssid[] = "Redmi K20";
+//Wifi name of the device 
+char pass[] = "1*2@304856789";
+//Wifi name of device to connect node mcu with Wifi 
+void setup() 
+{ 
+  Serial.begin(9600); 
+  Blynk.begin(auth, ssid, pass); 
+} 
+void loop() 
+{ 
+  Blynk.run();  
+} 
